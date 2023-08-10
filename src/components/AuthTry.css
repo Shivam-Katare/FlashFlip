@@ -1,0 +1,9 @@
+.auth-try {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  background: black;
+  padding-top: 6rem;
+  padding-bottom: 13rem;
+  color: white;
+}

@@ -1,0 +1,26 @@
+.firstPage-cards-wrapper {
+  width: 17rem;
+  height: 31rem;
+  background: blueviolet;
+  margin: 110px 12px;
+  border-radius: 12px;
+  transform: translateZ(5px)
+}
+
+.firstPage-card-overlap {
+  background-color: violet;
+  width: 17rem;
+  position: relative;
+  height: 12rem;
+  left: -11rem;
+  top: 17rem;
+  border-radius: 18px;
+  overflow: hidden;
+  background-image: url("");
+  
+}
+
+img {
+  width: 10rem;
+  height: 10rem;
+}

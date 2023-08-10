@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400|Open+Sans:600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.everything-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.4fr 0.3fr 0.2fr 0.3fr 2fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+justify-items: center;
+}
+
+.header {
+  font-family: 'Rajdhani', sans-serif;
+  height: 2rem;
+  padding: 13px;
+  text-align: center;
+  font-size: 4rem;
+}
+
+.cards-container {
+  margin-bottom: 12rem;
+}
+
+.timer-pointer-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 0.3fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  justify-items: center;
+  align-content: space-evenly;
+  width: 100%;
+}
+
+.clock-container {
+  background: white;
+  width: 100px;
+  height: 101px;
+  padding: 31px 39px;
+  box-shadow: 0px 8px 24px rgba(17,17,26,0.1), 0px 16px 56px rgba(17,17,26,0.1), 0px 24px 80px rgba(17,17,26,0.1);
+}
+
+.clock-time {
+  font-family: fantasy;
+  font-size: 35px;
+}
+
+.front{
+  position: relative;
+  background: white;
+  background-size: contain;
+  max-width: 500px;
+  width: 100%;
+  z-index: 1;
+  color: rgba(213, 92, 95, 1);
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.back {
+  background-color: #f2f2f2;
+  transform: rotate(540deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.flower {
+  position: absolute;
+  display: block;
+  width: 180px;
+  left: 160px;
+  z-index: -1;
+}
+
+.flower img {
+  height: 270px;
+  opacity: 0.4;
+}
+
+.flowers-back {
+  position: absolute;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-2019684-png.png") center center;
+  background-size: cover;
+  width: 500px;
+  height: 300px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.front h1,
+.front h2,
+.front h3 {
+  font-weight: 400;
+  letter-spacing: 7px;
+}
+
+.front h1,
+.front h2 {
+  font-family: 'Merriweather', serif;
+}
+
+.front h1 {
+  font-size: 1.5rem;
+}
+
+.front h2 {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.front h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.85rem;
+}
+
+.front h3:nth-of-type(1) {
+  margin-top: 40px;
+}
+
+.front h3:nth-of-type(2) {
+  margin-bottom: 10px;
+}
+
+.front i {
+  transform: rotate(45deg);
+  font-size: 0.8rem;
+}
+
+.bar {
+  width: 50px;
+  height: 1px;
+  background: rgba(213, 92, 95, 1);
+  margin: 20px auto;
+}
+
+.comment-one,
+.comment-two {
+  position: absolute;
+  color: #e1cfba;
+}
+
+.comment-one {
+  bottom: 70px;
+  left: -35px;
+  transform: rotate(-90deg);
+}
+
+.comment-two {
+  top: 90px;
+  right: -50px;
+  transform: rotate(90deg);
+}
+
+.trd,
+.mrk {
+  font-family: 'open sans';
+  position: absolute;
+  color: #e1cfba;
+  font-size: 0.8rem;
+}
+
+.trd {
+  top: 20px;
+  left: 20px;
+}
+
+.mrk {
+  bottom: 20px;
+  right: 20px;
+}
+
+.back {
+  font-family: Merriweather;
+  font-weight: 300;
+  overflow: hidden;
+}
+
+.back h3 {
+  font-size: 1rem;
+  margin-top: 90px;
+}
+
+.back h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 100;
+  letter-spacing: 4px;
+}
+
+:root {
+  --time: 0.707s;
+}
+
+.card {
+  perspective: 40rem;
+  width: 500px;
+  height: 300px;
+  margin: 50px auto;
+}
+
+.card-body {
+  display: flex;
+  transform-style: preserve-3d;
+  transition: var(--time) transform;
+}
+
+/* .card:hover .card-body,
+.card:focus .card-body {
+  transform: rotateX(-180deg);
+} */
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+  min-width: 100%;
+}
+
+.card-back {
+  transform: rotateX(-180deg) translate(-100%, 0);
+}
+
+/* Make it Pretty */
+
+.card {
+  display: flex;
+  transition: z-index, transform calc(var(--time) / 4);
+  transition-delay: var(--time), 0s;
+  text-decoration: none;
+  color: inherit;
+  z-index: 0;
+}
+
+.card:hover {
+  transition-delay: 0s;
+  z-index: 1;
+}
+
+.card:active {
+  transform: scale(0.975);
+}
+
+.card-body {
+  border-radius: 0.25rem;
+  flex: 1;
+}
+
+.card-front,
+.card-back {
+  box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.04),
+              0 2px 2px rgba(0, 0, 0, 0.04),
+              0 4px 4px rgba(0, 0, 0, 0.04),
+              0 8px 8px rgba(0, 0, 0, 0.04),
+              0 16px 16px rgba(0, 0, 0, 0.04);
+  display: flex;
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+}
+
+.mySwiper {
+  width: 530px;
+  height: 337px;
+  overflow: visible;
+}
+
+.swiper-cards .swiper-slide {
+  transform-origin: center bottom;
+  backface-visibility: hidden;
+  overflow: visible;
+}
+
+.swiper-slide.swiper-slide-visible.swiper-slide-active {
+  overflow: visible;
+}
+
+.flip-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.new-card-container {
+  background: blanchedalmond;
+  width: 40rem;
+  height: 26rem;
+  border: 2px solid;
+  border-radius: 16px;
+  box-shadow: 1px 2px 3px 3px rgba(234, 123, 123, 1);
+}

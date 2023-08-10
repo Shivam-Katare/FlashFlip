@@ -1,0 +1,15 @@
+.feature-one-container {
+  /* background-color: #ffd43e; */
+  background-color: #fcd880;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: 800;
+}

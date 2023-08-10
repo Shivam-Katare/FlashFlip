@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
+
+.features-highlight-container {
+  background: #ff8600;
+  color: black;
+  background: #E7DFD8;
+  display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: 0.4fr 1fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
+.features-highlight-header h1 {
+  font-family: 'Calistoga', cursive;
+  line-height: 12rem;
+  text-align: center;
+  font-size: 82px;
+}
+
+.features-highlight-header-card {
+  display: grid;
+  justify-items: center;
+}
